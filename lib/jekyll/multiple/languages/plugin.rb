@@ -282,12 +282,12 @@ module Jekyll
       end
       
       translation = Jekyll.langs[lang].access(key) if key.is_a?(String)
-      
+      translation
       if translation.nil? or translation.empty?
-         translation = Jekyll.langs[context.registers[:site].config['default_lang']].access(key) || translation
+         translation = Jekyll.langs[context.registers[:site].config['default_lang']].access(key)
         
         puts "Jekyll Multiple Languages: ".bold + "Missing i18n key: #{lang}:#{key}".yellow
-        puts "Using translation '%s' from default language: %s" %[translation, context.registers[:site].config['default_lang']].yellow
+        puts "Using translation '%s' from default language: %s" %[translation, context.registers[:site].config['default_lang']]
       end
       
       translation
