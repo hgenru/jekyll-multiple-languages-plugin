@@ -287,7 +287,7 @@ module Jekyll
          translation = Jekyll.langs[context.registers[:site].config['default_lang']].access(key)
         
         puts "Jekyll Multiple Languages: ".bold + "Missing i18n key: #{lang}:#{key}".yellow
-        puts "Using translation '%s' from default language: %s" %[translation, context.registers[:site].config['default_lang']]
+        puts ("Using translation '%s' from default language: %s" %[translation, context.registers[:site].config['default_lang']]).yellow
       end
       
       translation
